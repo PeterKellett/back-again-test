@@ -110,4 +110,4 @@ Happy coding!
 # My steps
 1. pip3 install flask  
 2. pip3 freeze --local > requirements.txt  
-3. 
+3. pip3 install flask-sqlalchemy
