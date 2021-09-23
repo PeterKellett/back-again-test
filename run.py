@@ -14,16 +14,22 @@ def index():
 
 
 @app.route('/login', methods=['GET', 'POST'])
-def login():
+def login():    
     if request.method == 'POST':
-        session['username'] = request.form['username']
-        return redirect(url_for('index'))
-    return '''
-        <form method="post">
-            <p><input type=text name=username>
-            <p><input type=submit value=Login>
-        </form>
-    '''
+        attempted_username = request.form['username']
+        attempted_password = request.form['password']
+
+        #flash(attempted_username)
+        #flash(attempted_password)
+
+        if attempted_username == "admin" and attempted_password == "password":
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+        else:
+            flash("username and/or password is incorrect, please try again.", "error")
+            return render_template('login.html')
+    else:
+        return render_template('login.html')
 
 @app.route('/logout')
 def logout():
