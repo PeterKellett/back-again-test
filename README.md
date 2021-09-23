@@ -106,3 +106,8 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+# My steps
+1. pip3 install flask  
+2. pip3 freeze --local > requirements.txt  
+3. 
