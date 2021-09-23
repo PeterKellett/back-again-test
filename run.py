@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, url_for, flash, session
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET", "randomstring123")
+app.secret_key = os.environ.get('SECRET_KEY', '')
 
 @app.route("/")
 def index():
